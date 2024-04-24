@@ -6,7 +6,7 @@ const src_path = path.join(__dirname, "..", "src");
 try {
     fs.readdirSync(src_path).
         filter(f => {
-            if (f.includes("day")) {
+            if (f === 'solutions') {
                 console.log("found", f);
                 return true;
             }

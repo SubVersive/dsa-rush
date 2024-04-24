@@ -14,11 +14,13 @@
         "typescript": "5.4.5"
     },
     "scripts": {
-        "test": "jest",
+        "test": "jest --",
         "clear": "node ./scripts/clear.js",
         "prettier": "prettier --write ./src",
-        "generate": "node ./scripts/generate.js",
-        "day": "echo src/day1"
+        "generate": "npm run clear && node ./scripts/generate.js",
+        "practice": "npm run clear && node ./scripts/practice.js",
+        "day": "echo src/day1",
+        "solutions": "echo src/solutions"
     },
     "devDependencies": {
         "@swc-node/register": "1.9.0"

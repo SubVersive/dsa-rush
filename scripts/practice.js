@@ -47,20 +47,21 @@ function create_function(name, item) {
 }`);
 }
 
-config.dsa.forEach(ds => {
-    const item = dsa[ds];
-    if (!item) {
-        throw new Error(`algorithm ${ds} could not be found`);
-    }
-    if (item.type === "class") {
-        create_class(ds, item);
-    } else {
-        create_function(ds, item);
-    }
-});
+const rnd = Math.floor(Math.random() * (config.practice.length - 1));
+const ds = config.practice[rnd];
+console.log(`Selected ${ds} for practice`);
+const item = dsa[ds];
+if (!item) {
+	throw new Error(`algorithm ${ds} could not be found`);
+}
+if (item.type === "class") {
+	create_class(ds, item);
+} else {
+	create_function(ds, item);
+}
 
 const align = require("./align-configs");
-align.jest(solutions);
+align.jest(solutions, ds);
 align.ts_config(solutions);
 align.package_json(config, relative_solutions_path);
 

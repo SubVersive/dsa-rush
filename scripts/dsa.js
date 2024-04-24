@@ -190,6 +190,13 @@ module.exports = {
         "return": "void",
     },
 
+	  SelectionSort: {
+		  type: "fn",
+		  fn: "selection_sort",
+      args: "arr: number[]",
+		  "return": "void",
+	  },
+
     InsertionSort: {
         type: "fn",
         fn: "insertion_sort",
