@@ -6,6 +6,8 @@ module.exports = {
 		"InsertionSort",
 		"SelectionSort",
 		"TwoCrystalBalls",
+		"SinglyLinkedList",
+		"Queue",
 	],
 	dsa: [
 		"DFSOnBST",
