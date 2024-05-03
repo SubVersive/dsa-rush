@@ -50,6 +50,7 @@ function create_function(name, item) {
 const rnd = Math.floor(Math.random() * (config.practice.length - 1));
 const ds = config.practice[rnd];
 console.log(`Selected ${ds} for practice`);
+fs.writeFileSync(path.join(__dirname, "..", "jest.tests.json"), JSON.stringify([ds], null, 2));
 const item = dsa[ds];
 if (!item) {
 	throw new Error(`algorithm ${ds} could not be found`);
@@ -63,5 +64,4 @@ if (item.type === "class") {
 const align = require("./align-configs");
 align.jest(solutions, ds);
 align.ts_config(solutions);
-align.package_json(config, relative_solutions_path);
 

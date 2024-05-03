@@ -4,5 +4,5 @@ dist
 stats.json
 src/_tests_
 solutions/
-
+jest.tests.json
 
