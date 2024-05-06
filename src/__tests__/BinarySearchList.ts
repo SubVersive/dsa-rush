@@ -40,5 +40,4 @@ describe("Binary search array", () => {
     expect(binary_fn(foo, 81)).toEqual(true);
     expect(binary_fn(foo, 90)).toEqual(true);
   });
-})
-
+});
