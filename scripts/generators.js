@@ -21,7 +21,8 @@ function create_class(solutions_path, name, item) {
     lines.push(os.EOL);
     lines.push(os.EOL);
   }
-  lines.push(`  constructor() {
+  const constructorArguments = item.constructor?.args || "";
+  lines.push(`  constructor(${constructorArguments}) {
   }`);
   lines.push(os.EOL);
   lines.push(os.EOL);

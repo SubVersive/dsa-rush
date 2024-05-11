@@ -43,7 +43,39 @@ const list_interface = {
   ...length_property,
 };
 
+const UnionFind = {
+  type: "class",
+  constructor: {
+    args: "n: number",
+  },
+  methods: [
+    {
+      name: "union",
+      args: "p: number, q: number",
+      return: "void",
+    },
+    {
+      name: "isConnected",
+      args: "p: number, q: number",
+      return: "boolean",
+    },
+    {
+      name: "count",
+      return: "number",
+    },
+    {
+      name: "find",
+      args: "p: number",
+      return: "number",
+    },
+
+  ],
+};
+
+
 module.exports = {
+  UFQuickFind: UnionFind,
+  UFQuickUnion: UnionFind,
   LRU: {
     generic: "<K, V>",
     type: "class",
