@@ -68,14 +68,22 @@ const UnionFind = {
       args: "p: number",
       return: "number",
     },
-
   ],
 };
 
 
 module.exports = {
   UFQuickFind: UnionFind,
-  UFQuickUnion: UnionFind,
+  UFQuickUnion: {
+    ...UnionFind,
+    methods: [
+      ...UnionFind.methods,
+      {
+        name: "setsCount",
+        return: "number",
+      },
+    ],
+  },
   LRU: {
     generic: "<K, V>",
     type: "class",

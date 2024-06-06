@@ -5,10 +5,11 @@ module.exports = {
     "BubbleSort",
     "InsertionSort",
     "SelectionSort",
-    "UFQuickFind",
-    "UFQuickUnion",
+    "QuickSort",
+    "MergeSort",
     "TwoCrystalBalls",
     "SinglyLinkedList",
+    "DoublyLinkedList",
     "Queue",
   ],
   dsa: [
