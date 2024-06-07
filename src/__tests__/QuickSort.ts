@@ -1,6 +1,6 @@
 import quick_sort from "@code/QuickSort";
 
-describe("bubble-sort", function () {
+describe("quick-sort", function () {
   test("empty array", function () {
     const arr: number[] = [];
     quick_sort(arr);

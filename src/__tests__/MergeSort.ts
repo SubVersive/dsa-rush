@@ -1,6 +1,6 @@
 import merge_sort from "@code/MergeSort";
 
-describe("bubble-sort", function () {
+describe("merge-sort", function () {
   test("empty array", function () {
     const arr: number[] = [];
     merge_sort(arr);

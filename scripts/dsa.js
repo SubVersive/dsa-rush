@@ -272,6 +272,13 @@ module.exports = {
     return: "void",
   },
 
+  BucketSort: {
+    type: "fn",
+    fn: "bucket_sort",
+    args: "arr: number[]",
+    return: "void",
+  },
+
   SelectionSort: {
     type: "fn",
     fn: "selection_sort",
