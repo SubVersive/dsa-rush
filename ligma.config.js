@@ -11,7 +11,6 @@ module.exports = {
     "TwoCrystalBalls",
     "SinglyLinkedList",
     "DoublyLinkedList",
-    "Queue",
     "BinarySearchTree",
   ],
   dsa: [

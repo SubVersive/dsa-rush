@@ -1,5 +1,5 @@
 # Add
-- Stack
+- DoublyLinkedList
 - Binar Search Tree
     - exists
     - insert
@@ -7,7 +7,7 @@
     - inorder
     - getMin
     - getMax
-    
+
 - Tree traversal
     - dfs
         - in order
@@ -15,6 +15,7 @@
         - post order
     - bfs
 
+- Stack
 - Heap
     - push
     - pop
