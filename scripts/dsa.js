@@ -243,7 +243,56 @@ module.exports = {
       },
     ],
   },
-
+  BinarySearchTree: {
+    generic: "<T>",
+    type: "class",
+    methods: [
+       {
+        name: "getRoot",
+        args: "",
+        return: "Node<T> | null",
+      },
+      {
+        name: "insert",
+        args: "item: T",
+        return: "void",
+      },
+      {
+        name: "delete",
+        args: "item: T",
+        return: "void",
+      },
+      {
+        name: "exists",
+        args: "item: T",
+        return: "boolean",
+      },
+    ],
+    nested: [{
+      name: "Node",
+      generic: "<T>",
+      constructor: {
+        args: "value: T",
+      },
+      properties: [
+        {
+          name: "value",
+          type: "T",
+          scope: "public",
+        },
+        {
+          name: "left",
+          type: "Node<T> | null",
+          scope: "public",
+        },
+        {
+          name: "right",
+          type: "Node<T> | null",
+          scope: "public",
+        },
+      ],
+    }]
+  },
   Trie: {
     type: "class",
     methods: [
@@ -274,6 +323,7 @@ module.exports = {
 
   BucketSort: {
     type: "fn",
+    description: "There are only 3 distinct values are in the array: 0, 1 or 2",
     fn: "bucket_sort",
     args: "arr: number[]",
     return: "void",
@@ -324,6 +374,7 @@ module.exports = {
   BinarySearchList: {
     type: "fn",
     fn: "bs_list",
+    description: "The elements in haystack are sorted in non-decreasing order",
     args: "haystack: number[], needle: number",
     return: "boolean",
   },

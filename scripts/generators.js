@@ -12,9 +12,12 @@ function generate_property(prop) {
   return `  ${prop.scope} ${prop.name}: ${prop.type};`;
 }
 
-function create_class(solutions_path, name, item) {
-  const lines = [];
-  lines.push(`export default class ${name}${item.generic || ""} {`);
+function generate_class(name, item, isDefault, lines) {
+  if (isDefault) {
+    lines.push(`export default class ${name}${item.generic || ""} {`);
+  } else {
+    lines.push(`export class ${name}${item.generic || ""} {`);
+  }
   lines.push(os.EOL);
   if (item.properties) {
     lines.push(item.properties.map(generate_property).join(os.EOL));
@@ -31,6 +34,19 @@ function create_class(solutions_path, name, item) {
     lines.push(os.EOL);
   }
   lines.push('}')
+}
+
+function create_class(solutions_path, name, item) {
+  const lines = [];
+  
+  (item.nested || []).forEach((ni) => {
+    generate_class(ni.name, ni, false, lines);
+    lines.push(os.EOL);
+    lines.push(os.EOL);
+  });
+
+  generate_class(name, item, true, lines);
+
   fs.writeFileSync(
     path.join(solutions_path, `${name}.ts`),
     lines.join(''),
@@ -39,9 +55,10 @@ function create_class(solutions_path, name, item) {
 
 function create_function(solutions_path, name, item) {
   const g = item.generic ? item.generic : "";
+  const desc = item.description ? `// ${item.description}${os.EOL}` : "";
   fs.writeFileSync(
     path.join(solutions_path, `${name}.ts`),
-    `export default function ${item.fn}${g}(${item.args}): ${item.return} {
+    `${desc}export default function ${item.fn}${g}(${item.args}): ${item.return} {
 
 }`,
   );
